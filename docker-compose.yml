@@ -24,6 +24,12 @@ services:
         links:
             - database
             - redis
+        healthcheck:
+            test: ["CMD-SHELL", "curl -fk https://${DOMAIN_NAME} || exit 1"]
+            interval: 6s
+            timeout: 5s
+            retries: 4
+            start_period: 60s
         environment:
             TZ: '${LOCAL_TIMEZONE}'
         labels:            
