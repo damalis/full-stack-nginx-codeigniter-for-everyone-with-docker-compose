@@ -220,7 +220,7 @@ add and/or remove codeIgniter site folders and files with any ftp client program
 
 #### Redis
 
-[Redis Cache](https://codeigniter.com/userguide3/libraries/caching.html#redis-caching) Config options to connect to redis server must be stored in the application/config/redis.php file.
+[Redis Cache](https://codeigniter.com/userguide3/libraries/caching.html#redis-caching), Config options to connect to redis server must be stored in the application/config/redis.php file.
 
 Available options are:
 
@@ -255,6 +255,6 @@ This will back up the all files and folders, once per day, and write it to ./bac
 50 23 * * * find /home/ubuntu/${DIRECTORY_PATH}/backups/backup* -type f -mtime +1 | xargs rm
 
 ##### # backup exclude wordpress, backups folders in /home/ubuntu/damalis
-00 01 * * * tar -czvf /home/ubuntu/${DIRECTORY_PATH}/backups/'backup-example.com-'$(date +"\%Y-\%m-\%dT\%H-\%M-\%S")'.tar.gz' --exclude='wordpress/wp-admin' --exclude='wordpress/wp-includes' --exclude='backups' /home/ubuntu/${DIRECTORY_PATH}
+00 01 * * * tar -czvf /home/ubuntu/${DIRECTORY_PATH}/backups/'backup-example.com-'$(date +"\%Y-\%m-\%dT\%H-\%M-\%S")'.tar.gz' --exclude='codeigniter/appstarter/app' --exclude='codeigniter/appstarter/tests' --exclude='codeigniter/appstarter/vendor' --exclude='backups' /home/ubuntu/${DIRECTORY_PATH}
 
 [CronHowto](https://help.ubuntu.com/community/CronHowto)
