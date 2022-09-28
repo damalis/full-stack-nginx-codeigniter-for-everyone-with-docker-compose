@@ -213,11 +213,11 @@ networks:
 
 volumes:
     html:
-        name: codeigniter-html
+        name: codeigniter
         driver: local
         driver_opts:
             type: none
-            device: ${DIRECTORY_PATH}/codeigniter/html
+            device: ${DIRECTORY_PATH}/codeigniter
             o: bind
     db:
         name: ${DATABASE_CONT_NAME}-data
