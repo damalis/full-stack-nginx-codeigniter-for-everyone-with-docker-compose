@@ -233,9 +233,9 @@ sed -i 's/local_timezone/'$local_timezone'/' .env
 if [ -x "$(command -v docker)" ] && [ -x "$(command -v docker-compose)" ]; then
     # Firstly: create external volume
 	docker volume create --driver local --opt type=none --opt device=`pwd`/certbot --opt o=bind certbot-etc > /dev/null
-	# installing codeIgniter and the other services
+	# installing CodeIgniter and the other services
 	docker-compose up -d & export pid=$!
-	echo "codeIgniter and the other services installing proceeding..."
+	echo "CodeIgniter and the other services installing proceeding..."
 	echo ""
 	wait $pid
 	if [ $? -eq 0 ]
@@ -277,7 +277,7 @@ if [ -x "$(command -v docker)" ] && [ -x "$(command -v docker-compose)" ]; then
 		fi
 	else
 		echo ""
-		echo "Error! could not installed codeIgniter and the other services with docker-compose" >&2
+		echo "Error! could not installed CodeIgniter and the other services with docker-compose" >&2
 		exit 1
 	fi
 else
