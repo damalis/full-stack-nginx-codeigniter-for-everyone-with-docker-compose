@@ -1,5 +1,5 @@
-upstream docker_codeIgniter {
-	server	codeIgniter:9000;
+upstream docker_codeigniter {
+	server	codeigniter:9000;
 }
 
 server_tokens off;
@@ -45,7 +45,8 @@ server {
 	# add global x-content-type-options header
 	add_header X-Content-Type-Options nosniff;	
 	
-	root /var/www/html;
+	root /var/www/html/appstarter/public;
+	index index.php;
 	
 	location / {
 		try_files $uri /index.php$is_args$args;
@@ -60,7 +61,7 @@ server {
 		# Mitigate https://httpoxy.org/ vulnerabilities
 		fastcgi_param HTTP_PROXY "";
 
-		fastcgi_pass docker_codeIgniter;
+		fastcgi_pass docker_codeigniter;
 		fastcgi_index index.php;
 
 		# include the fastcgi_param setting
