@@ -1,6 +1,6 @@
-# [full stack nginx codeIgniter for everyone with docker compose](https://github.com/damalis/full-stack-nginx-codeigniter-for-everyone-with-docker-compose)
+# [full stack nginx CodeIgniter for everyone with docker compose](https://github.com/damalis/full-stack-nginx-codeigniter-for-everyone-with-docker-compose)
 
-If You want to have a codeIgniter "appstarter" website at short time; 
+If You want to have a CodeIgniter "appstarter" website at short time; 
 
 #### Full stack Nginx CodeIgniter "appstarter":
 <p align="left"> <a href="https://www.codeigniter.com/" target="_blank" rel="noreferrer"> <img src="https://avatars.githubusercontent.com/u/44521256?s=200&v=4" alt="codeigniter" height="40" width="40"/> </a>&nbsp;&nbsp;&nbsp; <a href="https://www.docker.com/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/docker/docker.png" alt="docker" width="40" height="40" width="40"/> </a>&nbsp;&nbsp;&nbsp; <a href="https://mariadb.org/" target="_blank" rel="noreferrer"> <img src="https://avatars.githubusercontent.com/u/5877084?s=200&v=4" alt="mariadb" height="50" width="50"/> </a>&nbsp;&nbsp;&nbsp; <a href="https://www.nginx.com" target="_blank" rel="noreferrer"> <img src="https://avatars.githubusercontent.com/u/1412239?s=200&v=4" alt="nginx" height="40" width="40"/> </a>&nbsp;&nbsp;&nbsp; <a href="https://www.php.net" target="_blank" rel="noreferrer"> <img src="https://avatars.githubusercontent.com/u/25158?s=200&v=4" alt="php" height="40" width="40"/> </a>&nbsp;&nbsp;&nbsp; <a href="https://redis.io" target="_blank" rel="noreferrer"> <img src="https://avatars.githubusercontent.com/u/1529926?s=200&v=4" alt="redis" height="40" width="40"/> </a>&nbsp;&nbsp;&nbsp; <a href="#" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/bash/bash.png" alt="Bash" height="50" width="50" /> </a>&nbsp;&nbsp;&nbsp;
@@ -10,7 +10,7 @@ Plus, manage docker containers with Portainer.
 
 #### With this project you can quickly run the following:
 
-- [codeIgniter](https://github.com/codeigniter4/CodeIgniter4) - [php-fpm](https://hub.docker.com/_/php?tab=tags&page=1&name=fpm)
+- [CodeIgniter](https://github.com/codeigniter4/CodeIgniter4) - [php-fpm](https://hub.docker.com/_/php?tab=tags&page=1&name=fpm)
 - [webserver (nginx)](https://hub.docker.com/_/nginx)
 - [certbot (letsencrypt)](https://hub.docker.com/r/certbot/certbot)
 - [phpMyAdmin](https://hub.docker.com/r/phpmyadmin/phpmyadmin/)
@@ -215,7 +215,7 @@ Or you should make changes custom host configurations then must restart service
 docker container restart codeigniter
 ```
 
-add and/or remove codeIgniter site folders and files with any ftp client program in ```./codeigniter/html``` folder.
+add and/or remove codeigniter site folders and files with any ftp client program in ```./codeigniter/html``` folder.
 <br />You can also visit `https://example.com` to access website after starting the containers.
 
 #### Redis
@@ -254,7 +254,7 @@ This will back up the all files and folders, once per day, and write it to ./bac
 ##### # old docker backup folder remove
 50 23 * * * find /home/ubuntu/${DIRECTORY_PATH}/backups/backup* -type f -mtime +1 | xargs rm
 
-##### # backup exclude wordpress, backups folders in /home/ubuntu/damalis
+##### # backup exclude codeigniter, backups folders in /home/ubuntu/${DIRECTORY_PATH}
 00 01 * * * tar -czvf /home/ubuntu/${DIRECTORY_PATH}/backups/'backup-example.com-'$(date +"\%Y-\%m-\%dT\%H-\%M-\%S")'.tar.gz' --exclude='codeigniter/appstarter/app' --exclude='codeigniter/appstarter/tests' --exclude='codeigniter/appstarter/vendor' --exclude='backups' /home/ubuntu/${DIRECTORY_PATH}
 
 [CronHowto](https://help.ubuntu.com/community/CronHowto)
