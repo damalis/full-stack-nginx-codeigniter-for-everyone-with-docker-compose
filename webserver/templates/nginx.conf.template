@@ -50,10 +50,6 @@ server {
 		log_not_found off;
 	}
 	#
-	location ~*  \.(svg|svgz)$ {
-        types {}
-        default_type image/svg+xml;
-	}
 	location = /favicon.ico {
 		log_not_found off;
 		access_log off;
