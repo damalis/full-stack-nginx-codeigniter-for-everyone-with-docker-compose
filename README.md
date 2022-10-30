@@ -240,17 +240,31 @@ add or remove code in the ```./webserver/templates/nginx.conf.template``` file f
 
 #### Redis
 
-[Redis Cache](https://codeigniter.com/userguide3/libraries/caching.html#redis-caching), Config options to connect to redis server must be stored in the application/config/redis.php file.
+[Redis Cache](https://codeigniter.com/user_guide/libraries/caching.html?highlight=cache#redis-caching), Config options to connect to redis server stored in the cache configuration file.
 
 Available options are:
 
 ```
-$config['socket_type'] = 'tcp'; //`tcp` or `unix`
-$config['socket'] = '/var/run/redis.sock'; // in case of `unix` socket type
-$config['host'] = 'redis';
-$config['password'] = NULL;
-$config['port'] = 6379;
-$config['timeout'] = 0;
+<?php
+
+namespace Config;
+
+use CodeIgniter\Config\BaseConfig;
+
+class Cache extends BaseConfig
+{
+    // ...
+
+    public $redis = [
+        'host'     => 'redis',
+        'password' => null,
+        'port'     => 6379,
+        'timeout'  => 0,
+        'database' => 0,
+    ];
+
+    // ...
+}
 ```
 
 #### Cache
