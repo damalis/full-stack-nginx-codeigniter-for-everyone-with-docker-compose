@@ -39,7 +39,7 @@ Create rules to open ports to the internet, or to a specific IPv4 address or ran
 - [Usage](#usage)
 	- [Website](#website)
 	- [Webserver](#webserver)
-	- [Redis Plugin](#redis-plugin)
+	- [Redis](#redis)
 	- [Cache](#cache)
 	- [phpMyAdmin](#phpmyadmin)
 	- [backup](#backup)
@@ -232,6 +232,12 @@ docker container restart codeigniter
 add and/or remove codeigniter site folders and files with any ftp client program in ```./codeigniter/appstarter``` folder.
 <br />You can also visit `https://example.com` to access website after starting the containers.
 
+#### Webserver
+
+add or remove code in the ```./webserver/templates/nginx.conf.template``` file for custom nginx configurations
+
+[https://docs.nginx.com/nginx/admin-guide/basic-functionality/managing-configuration-files/](https://docs.nginx.com/nginx/admin-guide/basic-functionality/managing-configuration-files/)
+
 #### Redis
 
 [Redis Cache](https://codeigniter.com/userguide3/libraries/caching.html#redis-caching), Config options to connect to redis server must be stored in the application/config/redis.php file.
@@ -251,7 +257,7 @@ $config['timeout'] = 0;
 
 CodeIgniter features wrappers around some of the most popular forms of fast and dynamic caching. All but file-based caching require specific server requirements, and a Fatal Exception will be thrown if server requirements are not met.
 
-[https://codeigniter.com/userguide3/libraries/caching.html](https://codeigniter.com/userguide3/libraries/caching.html)
+[https://codeigniter.com/user_guide/libraries/caching.html?highlight=cache](https://codeigniter.com/user_guide/libraries/caching.html?highlight=cache)
 
 ### phpMyAdmin
 
