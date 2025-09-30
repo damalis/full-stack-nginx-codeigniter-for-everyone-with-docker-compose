@@ -155,7 +155,7 @@ Edit the `.env` file to change values of
   </tr>
     <tr>
     <td><code>DB_TABLE_PREFIX</code></td>
-    <td colspan="2"><code>data_</code> or <code><a href="https://mariadb.com/docs/server/reference/sql-structure/sql-language-structure/identifier-names" rel="nofollow" alt="custom name">custom name</a></code></td>
+    <td colspan="2"><code>data_</code> or <code><a href="https://mariadb.com/docs/server/reference/sql-structure/sql-language-structure/identifier-names" rel="nofollow" alt="custom value">custom value</a></code></td>
   </tr>
   <tr>
     <td><code>DATABASE_IMAGE_NAME</code></td>
