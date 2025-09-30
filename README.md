@@ -155,7 +155,7 @@ Edit the `.env` file to change values of
   </tr>
     <tr>
     <td><code>DB_TABLE_PREFIX</code></td>
-    <td colspan="2"><code>data_</code> or <code>[custom value](https://mariadb.com/docs/server/reference/sql-structure/sql-language-structure/identifier-names)</code></td>
+    <td colspan="2"><code>data_</code> or <code><a href="https://mariadb.com/docs/server/reference/sql-structure/sql-language-structure/identifier-names" rel="nofollow" alt="custom name">custom name</a></code></td>
   </tr>
   <tr>
     <td><code>DATABASE_IMAGE_NAME</code></td>
@@ -163,7 +163,7 @@ Edit the `.env` file to change values of
   </tr>
   <tr>
     <td><code>DATABASE_CONT_NAME</code></td>
-    <td colspan="2"><code>mariadb</code>, <code>mysql</code> or <code>custom name</code></td>
+    <td colspan="2"><code>mariadb</code>, <code>mysql</code> or <code><a href="https://docs.docker.com/reference/compose-file/services/#container_name" rel="nofollow" alt="custom name">custom name</a></code></td>
   </tr>
   <tr>
     <td rowspan="2"><code>DATABASE_PACKAGE_MANAGER</code></td>
