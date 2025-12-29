@@ -36,8 +36,8 @@ services:
         labels:
             - 'docker-volume-backup.stop-during-backup=true'
         command: >
-            bash -c "apt-get -y update && sh /tmp/packagecheck.sh 'zip unzip' && curl -sSL https://github.com/mlocati/docker-php-extension-installer/releases/latest/download/install-php-extensions -o - | sh -s intl mysqli redis && curl -sS https://getcomposer.org/installer | php && mv composer.phar /usr/local/bin/composer && 
-            if [ -f \"${WEBSERVER_DOC_ROOT}/appstarter/.env\" ]; then composer update --working-dir=${WEBSERVER_DOC_ROOT}/appstarter; else composer create-project codeigniter4/appstarter --no-dev; fi; 
+            bash -c "apt update && apt install -y git && sh /tmp/packagecheck.sh 'unzip' && curl -sSL https://github.com/mlocati/docker-php-extension-installer/releases/latest/download/install-php-extensions -o - | sh -s intl mysqli redis zip @composer && 
+            if [ -f \"${WEBSERVER_DOC_ROOT}/appstarter/.env\" ]; then composer update --working-dir=${WEBSERVER_DOC_ROOT}/appstarter; else composer create-project codeigniter4/appstarter --no-dev && composer update; fi; 
             sed \"s/# app\\.baseURL = ''/app.baseURL = 'https:\\/\\/${DOMAIN_NAME}\\/'/;s/# app_baseURL = ''/app_baseURL = 'https:\\/\\/${DOMAIN_NAME}\\/'/;s/# database.default.hostname = localhost/database.default.hostname = database/;s/# database.default.database = ci4/database.default.database = ${DB_NAME}/;s/# database.default.username = root/database.default.username = ${DB_USER}/;s/# database.default.password = root/database.default.password = ${DB_PASSWORD}/;s/# database.default.DBDriver = MySQLi/database.default.DBDriver = MySQLi/;s/# database.default.DBPrefix =/database.default.DBPrefix = ${DB_TABLE_PREFIX}/;s/# database.default.port = 3306/database.default.port = 3306/\" ${WEBSERVER_DOC_ROOT}/appstarter/env > ${WEBSERVER_DOC_ROOT}/appstarter/.env; 
             chmod 777 -R ${WEBSERVER_DOC_ROOT}/appstarter/writable/; grep -qxF 'date.timezone = ${LOCAL_TIMEZONE}' ${PHP_INI_DIR_PREFIX}/php/conf.d/security.ini || echo 'date.timezone = ${LOCAL_TIMEZONE}' >> ${PHP_INI_DIR_PREFIX}/php/conf.d/security.ini; php-fpm"
 
